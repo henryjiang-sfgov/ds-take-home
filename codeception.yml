@@ -1,0 +1,16 @@
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    enabled:
+        - Db:
+            dsn: 'mysql:host=docker_db_1;dbname=test'
+            user: 'root'
+            password: '1234'

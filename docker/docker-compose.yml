@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  lumen_php:
+    image: markoshust/lumen-php-apache:7.2-0
+    build: .
+    volumes:
+      - ~/.composer:/root/.composer:delegated
+      - ../:/var/www/html
+      - ./conf/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf
+      - ./conf/ssl:/etc/apache2/ssl
+    ports:
+      - 8081:80
+      - 1443:443

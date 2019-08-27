@@ -1,0 +1,9 @@
+.DS_Store
+Homestead.json
+Homestead.yaml
+.env
+database/seeds
+vendor/
+tests/_support/_generated
+node_modules/
+
