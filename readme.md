@@ -25,7 +25,7 @@ You need [Docker](https://www.docker.com/get-started), [docker-compose](https://
         docker-compose up -d
 ```
 
-4. You may now access your site at `https://local.test`
+4. You may now access your site at `https://local.test:1443`
  ** Please see sample app on [Heroku](https://ds-take-hom.herokuapp.com/)
 
 ### CSS/JS Development: laravel-mix
