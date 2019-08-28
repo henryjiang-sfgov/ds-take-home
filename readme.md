@@ -26,6 +26,7 @@ You need [Docker](https://www.docker.com/get-started), [docker-compose](https://
 ```
 
 4. You may now access your site at `https://local.test`
+ ** Please see sample app on [Heroku](https://ds-take-hom.herokuapp.com/)
 
 ### CSS/JS Development: laravel-mix
 
