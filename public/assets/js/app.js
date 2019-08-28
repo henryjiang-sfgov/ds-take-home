@@ -29,6 +29,7 @@ $(document).ready(function() {
   })
 });
 
+// Source: http://live.datatables.net/teredumi/4/
 function injectSlider(){
   $.fn.dataTable.ext.search.push(
     //Slider 1

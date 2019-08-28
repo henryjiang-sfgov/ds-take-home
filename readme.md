@@ -2,13 +2,14 @@
 
 ## Setup
 
-### If you want to use Docker for development
 ### Prerequisites
 You need [Docker](https://www.docker.com/get-started), [docker-compose](https://docs.docker.com/compose/), [Composer](https://getcomposer.org/doc/00-intro.md).
 
 ### Setup steps
 1. Setup a new project sekeleton from this repository
 ```
+        git clone https://github.com/henryjiang-sfgov/ds-take-home take-come
+        cd take-home
         cp .env.example .env
         composer install
 ```
@@ -17,7 +18,6 @@ You need [Docker](https://www.docker.com/get-started), [docker-compose](https://
 ```
         cd docker
         ./bin/initloopback
-
 ```
 
 3. Start your Docker containers with:
@@ -25,45 +25,43 @@ You need [Docker](https://www.docker.com/get-started), [docker-compose](https://
         docker-compose up -d
 ```
 
-4. To compile Sass stylesheets, run `npm run watch`
+4. You may now access your site at `https://local.test`
 
-5. You may now access your site at `https://local.test`
+### CSS/JS Development: laravel-mix
+
+1. Begin by installing Laravel Mix through NPM, and then copying the example Mix file to your project root.
+
+```bash
+    npm install laravel-mix --save-dev
+    cp node_modules/laravel-mix/setup/webpack.mix.js ./
+```
+
+2. You should now have the following directory structure:
+
+-   `node_modules/`
+-   `package.json`
+-   `webpack.mix.js`
+
+`webpack.mix.js` is your configuration layer on top of webpack. Most of your time will be spent here.
+
+3. Run development: npm run watch
 
 ### Unit Testing
-1. Navigate to the src/docker directory and spin up docker as normal
+1. Install [QUnit](http://qunitjs.com/)
 ```
-        docker-compose up -d
+      npm install --save-dev qunit
 ```
-2. List your docker containers and get the id of your db
+2. Write your unit tests in the tests/ directory
+
+3. Run unit tests
 ```
-        docker ps
-```
-3. Inspect your database container and write down the db's IPAddress
-```
-        docker inspect docker_db_1
-```
-4. Navigate to the src directory and edit codeception.yml
-```
-		modules:
-			enabled:
-				- Db:
-					dsn: 'mysql:host=put ip address from earlier here;dbname=webform'
-					user: 'root'
-					password: 'yourpassword'
-```
-5. Run bash from your php docker container
-```
-        docker exec -it docker_apache_php_1 /bin/bash
-```
-6. From /var/www/html execute unit tests
-```
-		vendor/bin/codecept run unit
+        qunit 'tests/*-test.js'
 ```
 
+## Further development
+This sample project is setup for future development on the Lumen framework. It lays the groundwork to make development easy.
+Install additional tools and libraries through composer.
 
-## Deployment to Heroku
-
-A pipeline has been setup for this project on Heroku that connects to the github repo. Every push to the branch you specify here will deploy a new version of this app.
 
 ## License
 

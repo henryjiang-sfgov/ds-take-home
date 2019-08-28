@@ -1,0 +1,19 @@
+{
+  "name": "Lumen",
+  "version": "1.0.0",
+  "description": "Lumen & laravel-mix",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.1.3",
+    "laravel-mix": "^2.1.14",
+    "qunit": "^2.9.2"
+  }
+}
